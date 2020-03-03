@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <assert.h>
+#include "_text.h"
+
+void move_cursor(text txt, int line, int pos){
+    node *current = txt->begin;
+    for(int i = 0; i < line; i++){
+	current = current->next;
+    }
+    txt->cursor->line = current;
+    txt->cursor->position = pos;
+}
